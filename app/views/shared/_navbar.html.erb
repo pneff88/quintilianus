@@ -13,15 +13,24 @@
         <li class="nav-item">
           <%= link_to "About", about_path, class: "nav-link"%>
         </li>
+        <li class="nav-item">
+          <%= link_to "Leaderboard", leaderboard_path, class: "nav-link"%>
+        </li>
       </ul>
-
-      <ul class = "nav-bar nav ms-auto mb-2 mb-lg-0">
+      <ul class = "navbar-nav ms-auto mb-2 mb-lg-0">
         <% if Current.user %>
+          <li class='nav-item'>
+            <%= Current.user.nomen%>
+          </li>
           <li class='nav-item'>
             <%= link_to Current.user.email, edit_password_path, class: "nav-link"%>
           </li>
           <li class='nav-item'>
-            <p>Pecunia: denarii</p>
+            <% if Current.user.pecunia == 1 %>
+              <p>Pecunia: <%= Current.user.pecunia%> denarius</p>
+            <%else%>
+              <p>Pecunia: <%= Current.user.pecunia%> denarii</p>
+            <%end%>
           </li>
           <li class='nav-item'>
             <%= link_to "Murus Meus", wall_path, class: "nav-link"%>

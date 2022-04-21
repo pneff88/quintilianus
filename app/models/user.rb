@@ -6,6 +6,7 @@
 #
 class User < ApplicationRecord
     has_secure_password
-
+    validates :nomen, presence: true
+    attribute :pecunia, :integer, default: 1
     validates :email, presence: true, format: { with: /\A[^@\s]+@bedfordasd.org/, message: "Must be a valid Bedford Area School District email address"}
 end

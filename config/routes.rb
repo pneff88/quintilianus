@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get "password/reset/edit", to: "password_resets#edit"
   patch "password/reset/edit", to: "password_resets#update"
 
+  get "leaderboard", to: "leaderboard#index"
+
   get "wall", to: "wall#index"
 
   root to: "main#index"

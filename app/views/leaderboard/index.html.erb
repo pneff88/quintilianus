@@ -1,0 +1,17 @@
+<h1>Quintilianus Leaderboard</h1>
+
+<table>
+    <tr>
+        <th>Nomen</th>
+        <th>Email</th>
+        <th>Pecunia</th>
+    </tr>
+    <% User.all.each do |user| %>
+    </tr>
+    <tr>
+        <td><%= user.nomen%></td>
+        <td><%= user.email %></td>
+        <td><%= user.pecunia %></td> 
+    </tr>
+    <%end%>
+</table>
