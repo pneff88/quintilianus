@@ -14,17 +14,47 @@
  *= require_self
  */
 
-/* h1 {
+    /* color:rgb(255, 214, 51); gold color to be used rgb(255, 77, 77)*/ 
+
+.navbar  {    
     background-color: rgb(255, 77, 77);
-    color: rgb(255, 214, 51);
+    border-bottom: 3px solid goldenrod;
 }
 
-nav {
-    background-color: rgb(255, 77, 77);
-    color:rgb(255, 214, 51);
+.main-content {
+    display: flex; 
+    justify-content: space-around;
 }
 
-nav li {
-    color:rgb(255, 214, 51);
+.main-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+}
 
-} */
+.main-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px goldenrod solid;
+    width: 60%;
+}
+
+.main-content .img-responsive {
+    border-radius: 10px; 
+    max-width: 300px
+}
+
+.SPQR-bar {
+    
+}
+
+table, th, td{
+    border: solid 1px goldenrod;
+    margin: 1px;
+}
+
+th, td {
+    padding: 10px;
+}

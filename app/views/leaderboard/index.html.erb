@@ -1,17 +1,22 @@
-<h1>Quintilianus Leaderboard</h1>
+<h1>Leaderboard</h1>
 
 <table>
     <tr>
+        <th>Place</th>
         <th>Nomen</th>
         <th>Email</th>
         <th>Pecunia</th>
     </tr>
-    <% User.all.each do |user| %>
+    <% place = 1 %>
+    
+    <% User.all.order(pecunia: :desc).each do |user| %>
     </tr>
-    <tr>
-        <td><%= user.nomen%></td>
-        <td><%= user.email %></td>
-        <td><%= user.pecunia %></td> 
-    </tr>
+        <tr>
+            <td><%=place%></td>
+            <td><%= user.nomen%></td>
+            <td><%= user.email %></td>
+            <td><%= user.pecunia %></td> 
+            <%place=place + 1%>
+        </tr>
     <%end%>
 </table>
