@@ -1,2 +1,15 @@
 <h1><%=Current.user.nomen%>'s murus:</h1>
 
+<h2>Why I study Latin:<h2>
+<p><%=Current.user.aboutme%></p>
+
+<h2>My bank:</h2>
+<p>You currently have 
+
+<%=Current.user.pecunia%> 
+<% if Current.user.pecunia != 1%>
+        <%= 'denarii' %>
+    <%else%>
+        <%= 'denarius' %>
+    <%end%>
+in the bank.</p>
