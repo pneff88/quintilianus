@@ -10,4 +10,6 @@ class User < ApplicationRecord
     validates :aboutme, presence: true
     attribute :pecunia, :integer, default: 5
     validates :email, presence: true, format: { with: /\A[^@\s]+@bedfordasd.org/, message: "Must be a valid Bedford Area School District email address"}
+
+
 end

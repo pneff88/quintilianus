@@ -73,8 +73,8 @@ code {
 .white {
   border: darkgray 2px solid; 
   color: black;
-  height: 54px;
-  width: 54px;
+  height: 58px;
+  width: 58px;
 }
 
 .black {
@@ -139,12 +139,15 @@ nav {
   border-radius: 10px;
   z-index: 1;
   width:350px;
-  min-height:200px;
+  height:200px;
+  top: 140px;
+  left: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
+  margin: 0 auto;
 }
 
 .victoryModal {

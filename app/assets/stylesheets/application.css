@@ -59,3 +59,8 @@ th, td {
     padding: 10px;
 }
 
+.game-heading {
+    text-align: center;
+    border-bottom: 2px solid goldenrod;
+    padding 10px;
+}

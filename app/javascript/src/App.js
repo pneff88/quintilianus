@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import "app/javascript/src/index.css"
+import "/app/javascript/src/index.css"
 
 let dictionary = [
   ["PATER", "father"],
