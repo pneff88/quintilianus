@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   get "wall", to: "wall#index"
 
+  get "verble", to: "verble#index"
+
   root to: "main#index"
 
 end
