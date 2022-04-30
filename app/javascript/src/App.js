@@ -95,7 +95,14 @@ let dictionary = [
   ["DONUM", "present, gift"],
   ["INTUS", "inside"],
   ["ALIAS", "other"],
-  ["CUPIO", "I want"]
+  ["CUPIO", "I want"],
+  ["MENSA", "table"],
+  ["DOCET", "teaches"],
+  ["SALUS", "safety"],
+  ["ADEST", "is here, is present"],
+  ["FAVET", "favors, supports +DAT."],
+  ["AURAE", "air"],
+  ["IACET", "lies, rests"]
 ]
 function selectRandomEntry() {
   let targetEntry = dictionary[Math.floor(Math.random()*dictionary.length)];
@@ -229,7 +236,13 @@ function hasWon(){
   }
   state.points=(6-state.index[0])*10;
   state.victor=true;
+
   return true
+}
+
+function updatePecunia(){
+  let res =  fetch(`pecunia/${state.points}`);
+  return res;
 }
 
 function enterRow() {
@@ -258,6 +271,11 @@ function enterRow() {
   if (hasWon()) {
     state.message=`Euge! Tu es victor! You have earned ${state.points} denarii!`;
     state.modalvisibility='visible';
+    updatePecunia().then((res)=> {
+      return res.json()
+    }).then((jsonRes) => {
+      console.log(jsonRes)
+    }) //fetch return a promise-will call resolves (.then) or rejects
   }
   console.log(state.index)
 }

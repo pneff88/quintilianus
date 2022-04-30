@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   get "verble", to: "verble#index"
 
+  get "pecunia/:denarii", to: "pecunia#edit"
+
   root to: "main#index"
 
 end
