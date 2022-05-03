@@ -48,7 +48,7 @@ gem "webpacker"
 gem 'react-rails'
 
 #Possibly needed for Heroku to work
-gem 'rails_12factor'
+# gem 'rails_12factor'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
