@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+    /* color:rgb(255, 214, 51); gold color to be used rgb(255, 77, 77)*/ 
+
+.navbar  {    
+    background-color: rgb(255, 77, 77);
+    border-bottom: 3px solid goldenrod;
+}
+
+.main-content {
+    display: flex; 
+    justify-content: space-around;
+}
+
+.main-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+}
+
+.main-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px goldenrod solid;
+    width: 60%;
+}
+
+.main-content .img-responsive {
+    border-radius: 10px; 
+    max-width: 300px
+}
+
+.SPQR-bar {
+    
+}
+
+table, th, td{
+    border: solid 1px goldenrod;
+    margin: 1px;
+}
+
+th, td {
+    padding: 10px;
+}
+
+.game-heading {
+    text-align: center;
+    border-bottom: 2px solid goldenrod;
+    padding 10px;
+}
