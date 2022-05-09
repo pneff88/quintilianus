@@ -108,7 +108,13 @@ let dictionary = [
   ["NOBIS", "to us"],
   ["REDIT", "goes back"],
   ["RADIT", "scrapes"],
-  ["PONIT", "puts, places"]
+  ["PONIT", "puts, places"],
+  ["ALIUS", "other"],
+  ["MAIOR", "bigger"],
+  ["NOVUS", "new"],
+  ["VILLA", "house"],
+  ["PAENE", "nearly"],
+  ["TULIT", "brought"]
 ]
 function selectRandomEntry() {
   let targetEntry = dictionary[Math.floor(Math.random()*dictionary.length)];

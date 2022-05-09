@@ -12,10 +12,10 @@
     },
     "hello_react": {
       "js": [
-        "/packs/js/hello_react-0d63039674756747b26c.js"
+        "/packs/js/hello_react-0eec746be95c78a11be7.js"
       ],
       "js.map": [
-        "/packs/js/hello_react-0d63039674756747b26c.js.map"
+        "/packs/js/hello_react-0eec746be95c78a11be7.js.map"
       ]
     },
     "server_rendering": {
@@ -27,8 +27,8 @@
       ]
     }
   },
-  "hello_react.js": "/packs/js/hello_react-0d63039674756747b26c.js",
-  "hello_react.js.map": "/packs/js/hello_react-0d63039674756747b26c.js.map",
+  "hello_react.js": "/packs/js/hello_react-0eec746be95c78a11be7.js",
+  "hello_react.js.map": "/packs/js/hello_react-0eec746be95c78a11be7.js.map",
   "server_rendering.js": "/packs/js/server_rendering-877d2587d52c7c2ae24d.js",
   "server_rendering.js.map": "/packs/js/server_rendering-877d2587d52c7c2ae24d.js.map"
 }
