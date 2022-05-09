@@ -114,7 +114,7 @@ let dictionary = [
   ["NOVUS", "new"],
   ["VILLA", "house"],
   ["PAENE", "nearly"],
-  ["TULIT", "brought"],//beginning of 3rd period
+  ["TULIT", "brought"],
   ["NOTUS", "well known, famous"],
   ["TERRA", "ground, land"],
   ["FUGIT", "runs away, flees"], 
@@ -136,7 +136,8 @@ let dictionary = [
   ["PUGIL", "boxer"],
   ["GERIT", "wears"],
   ["AEGER", "sick, ill"],
-  ["LUCET", "shines"]
+  ["LUCET", "shines"], 
+  ["IANUA", "door"]
 ]
 function selectRandomEntry() {
   let targetEntry = dictionary[Math.floor(Math.random()*dictionary.length)];
