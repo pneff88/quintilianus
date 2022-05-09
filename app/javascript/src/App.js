@@ -144,7 +144,12 @@ let dictionary = [
   ["VAGIT", "cries"],
   ["VIVUS", "alive"],
   ["FACIT", "makes, does"],
-  ["NAVIS", "ship"]
+  ["NAVIS", "ship"],
+  ["PANIS", "bread"], // updated based on 8th period Latin
+  ["CURAT", "takes care of"],
+  ["NECAT", "kills"],
+  ["SPINA", "thorn"],
+  ["PROPE", "near"]
 ]
 function selectRandomEntry() {
   let targetEntry = dictionary[Math.floor(Math.random()*dictionary.length)];
