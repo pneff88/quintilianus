@@ -114,7 +114,29 @@ let dictionary = [
   ["NOVUS", "new"],
   ["VILLA", "house"],
   ["PAENE", "nearly"],
-  ["TULIT", "brought"]
+  ["TULIT", "brought"],//beginning of 3rd period
+  ["NOTUS", "well known, famous"],
+  ["TERRA", "ground, land"],
+  ["FUGIT", "runs away, flees"], 
+  ["PARCE", "mercy!"],
+  ["BONUS", "good"],
+  ["RUINA", "ruin, wreckage"],
+  ["ARENA", "arena"],
+  ["ALTER", "the other, the second"],
+  ["FLUIT", "flows"],
+  ["IUBET", "orders"],
+  ["VALDE", "very much, very"],
+  ["FECIT", "made, did"],
+  ["LOCUS", "place"],
+  ["TOTUS", "whole"],
+  ["SONUS", "sound"],
+  ["SECAT", "cuts"],
+  ["ADDIT", "adds"],
+  ["VALET", "feels well"],
+  ["PUGIL", "boxer"],
+  ["GERIT", "wears"],
+  ["AEGER", "sick, ill"],
+  ["LUCET", "shines"]
 ]
 function selectRandomEntry() {
   let targetEntry = dictionary[Math.floor(Math.random()*dictionary.length)];
@@ -123,7 +145,7 @@ function selectRandomEntry() {
 
 let targetEntry = selectRandomEntry();
 
-console.log(targetEntry)
+// console.log(targetEntry)
 let myTarget = targetEntry[0];
 let myAnswer = targetEntry[1];
 
