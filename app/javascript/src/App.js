@@ -137,7 +137,12 @@ let dictionary = [
   ["GERIT", "wears"],
   ["AEGER", "sick, ill"],
   ["LUCET", "shines"], 
-  ["IANUA", "door"]
+  ["IANUA", "door"],
+  ["CUPIT", "wants"], //need to update
+  ["VIXIT", "is alive"], 
+  ["DICIT", "says"],
+  ["VAGIT", "cries"],
+  ["VIVUS", "alive"]
 ]
 function selectRandomEntry() {
   let targetEntry = dictionary[Math.floor(Math.random()*dictionary.length)];
