@@ -35,16 +35,13 @@ let dictionary = [
   ["IUDEX", "judge"],
   ["HODIE", "today"],
   ["DEBET", "owes"],
-  ["TESTIS", "witness"],
   ["CELAT", "is hiding"],
   ["DECEM", "ten"],
-  ["PAUPER", "a poor man"],
   ["PACEM", "peace"],
   ["SOLUS", "lonely"],
   ["CAUPO", "innkeeper"],
   ["DIVES", "rich"],
   ["MURUM", "wall"],
-  ["TANTUM", "only"],
   ["MECUM", "with me"],
   ["SENSI", "felt"],
   ["NUBEM", "cloud"],
@@ -103,7 +100,15 @@ let dictionary = [
   ["ADEST", "is here, is present"],
   ["FAVET", "favors, supports +DAT."],
   ["AURAE", "air"],
-  ["IACET", "lies, rests"]
+  ["IACET", "lies, rests"],
+  ["VOBIS", "to you, pl."],
+  ["FELIX", "lucky, happy"],
+  ["PERIT", "dies, perishes"],
+  ["PORTA", "gate"],
+  ["NOBIS", "to us"],
+  ["REDIT", "goes back"],
+  ["RADIT", "scrapes"],
+  ["PONIT", "puts, places"]
 ]
 function selectRandomEntry() {
   let targetEntry = dictionary[Math.floor(Math.random()*dictionary.length)];
