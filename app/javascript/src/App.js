@@ -56,7 +56,7 @@ let dictionary = [
   ["MANET", "remains, stays"],
   ["PUERI", "boys"],
   ["ABEST", "is out"],
-  ["MULTI, many"],
+  ["MULTI", "many"],
   ["PUGNA", "fight"],
   ["LAETE", "happily"],
   ["SOLUS", "alone"],
@@ -138,11 +138,13 @@ let dictionary = [
   ["AEGER", "sick, ill"],
   ["LUCET", "shines"], 
   ["IANUA", "door"],
-  ["CUPIT", "wants"], //need to update
+  ["CUPIT", "wants"], 
   ["VIXIT", "is alive"], 
   ["DICIT", "says"],
   ["VAGIT", "cries"],
-  ["VIVUS", "alive"]
+  ["VIVUS", "alive"],
+  ["FACIT", "makes, does"],
+  ["NAVIS", "ship"]
 ]
 function selectRandomEntry() {
   let targetEntry = dictionary[Math.floor(Math.random()*dictionary.length)];
