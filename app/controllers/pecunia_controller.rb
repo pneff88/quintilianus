@@ -3,7 +3,9 @@ class PecuniaController < ApplicationController
 
     def edit
         @user = Current.user
-        @user.pecunia = @user.pecunia + params[:denarii].to_i
+        if params[:denarii].to_i<61
+            @user.pecunia = @user.pecunia + params[:denarii].to_i
+        end
         p @user.pecunia
         @user.save
                 render :json => {:denarii => @user.pecunia}
