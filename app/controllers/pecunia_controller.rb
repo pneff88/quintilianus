@@ -1,14 +1,17 @@
 class PecuniaController < ApplicationController
     before_action :set_current_user
+    skip_before_action :verify_authenticity_token
 
     def edit
         @user = Current.user
-        if params[:denarii].to_i<61
-            @user.pecunia = @user.pecunia + params[:denarii].to_i
-        end
-        p @user.pecunia
+        
+        p request.body
+        # if params[:denarii].to_i<61
+        @user.pecunia = @user.pecunia + params[:points]
+        # end
+        # p @user.pecunia
         @user.save
-                render :json => {:denarii => @user.pecunia}
-
+        render :json => {}
+        
     end
 end

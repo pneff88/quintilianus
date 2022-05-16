@@ -149,7 +149,18 @@ let dictionary = [
   ["CURAT", "takes care of"],
   ["NECAT", "kills"],
   ["SPINA", "thorn"],
-  ["PROPE", "near"]
+  ["PROPE", "near"],
+  ["STOLA", "dress"],
+  ["NAUTA", "sailor"],
+  ["PARAT", "prepares"],
+  ["BABAE", "hey!"],
+  ["PALLA", "cloak"],
+  ["VERNA", "slave born in the home"],
+  ["NASUS", "nose"],
+  ["OMNIS", "all, entire"],
+  ["SOROR", "sister"],
+  ["TIMET", "fears"],
+  ["ILLAM", "that"]
 ]
 function selectRandomEntry() {
   let targetEntry = dictionary[Math.floor(Math.random()*dictionary.length)];
@@ -157,7 +168,7 @@ function selectRandomEntry() {
 }
 
 let targetEntry = selectRandomEntry();
-
+console.log(targetEntry);
 console.log(dictionary.length);
 let myTarget = targetEntry[0];
 let myAnswer = targetEntry[1];
@@ -223,6 +234,7 @@ class Space extends React.Component {
     return (
       <div
         onClick={() => {
+          if (state.victor===false) {
           if (this.props.letter === 'ENTER') {
             let myString = ''
             for (let i = 0; i < 5; i++) {
@@ -259,7 +271,7 @@ class Space extends React.Component {
             state.message="Eheu! Tu non es victor...";
             state.modalvisibility='visible';
           }
-        }}
+        }}}
         className={`space 
         ${colorToClassMap[this.props.color]}
         ${boardToClassMap[this.props.keyType]}
@@ -272,23 +284,28 @@ class Space extends React.Component {
 }
 
 function hasWon(){
-  let rowIndex = state.index[0];
-  for (let i = 0; i < 5; i++) {
-    let ourSpace = state.rows[rowIndex][i];
-    let char = ourSpace.letter;
-    let targetChar = state.target[i];
-    if (char !== targetChar) {
-      return false
+  if (state.victor===false) {
+    let rowIndex = state.index[0];
+    for (let i = 0; i < 5; i++) {
+      let ourSpace = state.rows[rowIndex][i];
+      let char = ourSpace.letter;
+      let targetChar = state.target[i];
+      if (char !== targetChar) {
+        return false
+      }
     }
-  }
-  state.points=(6-state.index[0])*10;
-  state.victor=true;
+    state.points=(6-state.index[0])*10;
+    state.victor=true;
 
-  return true
+    return true
+  }
+  return false;
 }
 
 function updatePecunia(){
-  let res =  fetch(`pecunia/${state.points}`);
+  let body = {points: state.points}
+  let res =  fetch('pecunia', {body: JSON.stringify(body), method: 'POST', headers: {'Content-Type': 'application/json'
+}});
   return res;
 }
 
@@ -316,7 +333,7 @@ function enterRow() {
       }
     } 
   if (hasWon()) {
-    state.message=`Euge! Tu es victor! You have earned ${state.points} denarii!`;
+    state.message=`Euge! Tu es victor! You have earned ${state.points} denarii! The Verble word means "${myAnswer}".`;
     state.modalvisibility='visible';
     updatePecunia().then((res)=> {
       return res.json()
