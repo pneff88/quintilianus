@@ -161,13 +161,23 @@ let dictionary = [
   ["SOROR", "sister"],
   ["TIMET", "fears"],
   ["ILLAM", "that"],
-  ["TACET", "is quiet, is silent"]
+  ["TACET", "is quiet, is silent"],
+  ["LARES", "household gods"],
+  ["ROGAT", "asks"],
+  ["LEGIT", "reads"],
+  ["FORUM", "forum, business center"],
+  ["VINUM", "wine"],
+  ["VEXAT", "annoys"],
+  ["ARDET", "burns, is on fire"],
+  ["LIBER", "book"],
+  ["SONAT", "sounds"]
+
 ]
 function selectRandomEntry() {
   let targetEntry = dictionary[Math.floor(Math.random()*dictionary.length)];
   return targetEntry;
 }
-console.log(dictionary[Math.floor(Math.random()*dictionary.length)]);
+console.log(dictionary.length)
 let targetEntry = selectRandomEntry();
 let myTarget = targetEntry[0];
 let myAnswer = targetEntry[1];
