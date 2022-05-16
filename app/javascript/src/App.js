@@ -160,13 +160,14 @@ let dictionary = [
   ["OMNIS", "all, entire"],
   ["SOROR", "sister"],
   ["TIMET", "fears"],
-  ["ILLAM", "that"]
+  ["ILLAM", "that"],
+  ["TACET", "is quiet, is silent"]
 ]
 function selectRandomEntry() {
   let targetEntry = dictionary[Math.floor(Math.random()*dictionary.length)];
   return targetEntry;
 }
-
+console.log(dictionary[Math.floor(Math.random()*dictionary.length)]);
 let targetEntry = selectRandomEntry();
 let myTarget = targetEntry[0];
 let myAnswer = targetEntry[1];
@@ -331,7 +332,7 @@ function enterRow() {
       }
     } 
   if (hasWon()) {
-    state.message=`Euge! Tu es victor! You have earned ${state.points} denarii! The Verble word means "${myAnswer}".`;
+    state.message=`Euge! Tu es victor! You have earned ${state.points} denarii! The Verble word, "${myTarget}", means "${myAnswer}".`;
     state.modalvisibility='visible';
     updatePecunia().then((res)=> {
       return res.json()
