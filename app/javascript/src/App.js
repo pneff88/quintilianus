@@ -168,7 +168,6 @@ function selectRandomEntry() {
 }
 
 let targetEntry = selectRandomEntry();
-console.log(dictionary.length);
 let myTarget = targetEntry[0];
 let myAnswer = targetEntry[1];
 
