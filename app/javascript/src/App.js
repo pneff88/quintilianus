@@ -170,8 +170,9 @@ let dictionary = [
   ["VEXAT", "annoys"],
   ["ARDET", "burns, is on fire"],
   ["LIBER", "book"],
-  ["SONAT", "sounds"]
-
+  ["SONAT", "sounds"],
+  ["RAPIT", "seizes"],
+  ["FUMUS", "smoke"]
 ]
 function selectRandomEntry() {
   let targetEntry = dictionary[Math.floor(Math.random()*dictionary.length)];
@@ -270,10 +271,9 @@ class Space extends React.Component {
             }
 
           } else {
-            console.log(state);
+            
             let currentSpace = state.rows[state.index[0]][state.index[1]]
             currentSpace.letter = this.props.letter;
-            console.log(state);
             state.index[1] = state.index[1] + 1;
           }
           if (state.index[0]===6 && state.victor===false) {
