@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   get "verble", to: "verble#index"
 
+  get "vocabbuilder", to: "vocabbuilder#index"
+
   post "pecunia", to: "pecunia#edit"
 
   root to: "main#index"

@@ -1,0 +1,108 @@
+main {
+  text-align: center;
+  vertical-align: center;
+  line-height: 100vh;
+}
+
+* {
+  background-color: white; 
+}
+
+.container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; 
+  padding: 10px; 
+}
+
+.questions {
+  background-color: #ff5349;
+  padding: 30px; 
+  border:6px solid goldenrod;
+  border-radius: 10px;
+  margin: 5px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
+
+}
+
+
+
+.answerContainer {
+  display: flex;
+}
+
+.answers {
+  background-color: #ff5349;
+  padding: 30px;
+  border: 3px solid goldenrod; 
+  border-radius: 10px;
+  margin: 5px;
+  transition: 150ms;
+  cursor: pointer; 
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
+
+}
+
+.answers:hover{ 
+  position: relative; 
+  top: -3px;
+  filter: brightness(75%);
+} 
+
+.InfoCard {
+  background-color: lightcoral;
+  padding: 30px;
+  border: 3px solid goldenrod; 
+  border-radius: 10px;
+  margin: 5px;
+  transition: 150ms;
+  cursor: pointer; 
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
+}
+
+.cardContainer {
+  display:flex; 
+}
+
+.Right {
+  height: 20px;
+  background-color: green; 
+  color: goldenrod;
+  padding: 30px;
+  border: 3px solid goldenrod; 
+  border-radius: 10px;
+  margin: 5px;
+  transition: 150ms;
+  cursor: pointer; 
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
+  position: absolute; 
+  left: 45%;
+  top: 30%;
+  z-index: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+.Wrong {
+  height: 20px;
+  background-color: darkred; 
+  color: goldenrod; 
+  padding: 30px;
+  border: 3px solid goldenrod; 
+  border-radius: 10px;
+  margin: 5px;
+  transition: 100ms;
+  cursor: pointer; 
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
+  position: absolute; 
+  left: 45%;
+  top: 30%;
+  z-index: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
