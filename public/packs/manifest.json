@@ -1,13 +1,13 @@
 {
-  "application.js": "/packs/js/application-0bffc09d86085474ea01.js",
-  "application.js.map": "/packs/js/application-0bffc09d86085474ea01.js.map",
+  "application.js": "/packs/js/application-5cdc8f660d81168c421b.js",
+  "application.js.map": "/packs/js/application-5cdc8f660d81168c421b.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-0bffc09d86085474ea01.js"
+        "/packs/js/application-5cdc8f660d81168c421b.js"
       ],
       "js.map": [
-        "/packs/js/application-0bffc09d86085474ea01.js.map"
+        "/packs/js/application-5cdc8f660d81168c421b.js.map"
       ]
     },
     "server_rendering": {
@@ -20,25 +20,25 @@
     },
     "verble": {
       "js": [
-        "/packs/js/verble-ab4b97d67484422eec1e.js"
+        "/packs/js/verble-4dcd9cc81cd673e6dfb0.js"
       ],
       "js.map": [
-        "/packs/js/verble-ab4b97d67484422eec1e.js.map"
+        "/packs/js/verble-4dcd9cc81cd673e6dfb0.js.map"
       ]
     },
     "vocabbuilder": {
       "js": [
-        "/packs/js/vocabbuilder-64bd67e15e8a3b622e08.js"
+        "/packs/js/vocabbuilder-9d3af175c1525aad6cc2.js"
       ],
       "js.map": [
-        "/packs/js/vocabbuilder-64bd67e15e8a3b622e08.js.map"
+        "/packs/js/vocabbuilder-9d3af175c1525aad6cc2.js.map"
       ]
     }
   },
   "server_rendering.js": "/packs/js/server_rendering-877d2587d52c7c2ae24d.js",
   "server_rendering.js.map": "/packs/js/server_rendering-877d2587d52c7c2ae24d.js.map",
-  "verble.js": "/packs/js/verble-ab4b97d67484422eec1e.js",
-  "verble.js.map": "/packs/js/verble-ab4b97d67484422eec1e.js.map",
-  "vocabbuilder.js": "/packs/js/vocabbuilder-64bd67e15e8a3b622e08.js",
-  "vocabbuilder.js.map": "/packs/js/vocabbuilder-64bd67e15e8a3b622e08.js.map"
+  "verble.js": "/packs/js/verble-4dcd9cc81cd673e6dfb0.js",
+  "verble.js.map": "/packs/js/verble-4dcd9cc81cd673e6dfb0.js.map",
+  "vocabbuilder.js": "/packs/js/vocabbuilder-9d3af175c1525aad6cc2.js",
+  "vocabbuilder.js.map": "/packs/js/vocabbuilder-9d3af175c1525aad6cc2.js.map"
 }
