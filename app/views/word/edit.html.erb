@@ -1,0 +1,41 @@
+<h1>Edit <%=@word.title%></h1>
+
+
+
+<form action = "/word/<%=@word.id%>/update" accept-charset="UTF-8" method = "post">
+    <input type="hidden" name="authenticity_token" value="...">
+
+    <div>
+        <label for = "word_title">Vocabulary Word</lable><br>
+        <input type = "text" name = "word[title]" id='word_title' value = "<%=@word.title%>">
+    </div>
+    <div>
+        <label for = "word_meaning">Meaning</lable><br>
+        <input type = "text" name = "word[meaning]" id='word_meaning' value = "<%=@word.meaning%>">
+    </div>
+    <div>
+      <label for = "word_pos">Part of Speech</lable><br>
+        <select type = "text" name = "word[pos]" id="word_pos">
+            <option value = "noun">Noun</option>
+            <option value = "pronoun">Pronoun</option>
+            <option value = "verb">Verb</option>
+            <option value = "adjective">Adjective</option>
+            <option value = "adverb">Adverb</option>
+            <option value = "preposition">Preposition</option>
+            <option value = "conjunction">Conjunction</option>
+            <option value = "interjection">Interjection</option>
+        </select>
+    </div>
+    <div>
+        <label for = "word_textbook">Textbook</lable><br>
+        <input type = "text" name = "word[textbook]" id='word_textbook' value = "<%=@word.textbook%>">
+    </div>
+    <div>
+        <label for = "word_chapter">Chapter</lable><br>
+        <input type = "text" name = "word[chapter]" id='word_chapter' value = "<%=@word.chapter%>">
+    </div>
+
+    <div>
+        <input type="submit" name = "commit" value = "Edit Word" data-disable-with="Edit Word">
+    </div>
+</form>

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   
   get "about", to: "about#index"
 
+  get "faq", to: "faq#index"
+
   get "sign_up", to: "registrations#new"
   post "sign_up", to: "registrations#create"
 
@@ -29,6 +31,14 @@ Rails.application.routes.draw do
   get "verble", to: "verble#index"
 
   get "vocabbuilder", to: "vocabbuilder#index"
+
+  get "word", to: "word#index"
+  get "word/new", to: "word#new"
+  get "word/:id", to: "word#show"
+  patch "/word/create", to: "word#create"
+  delete "word/:id", to: "word#destroy"
+  get "word/:id/edit", to: "word#edit"
+  post "/word/:id/update", to: "word#update"
 
   post "pecunia", to: "pecunia#edit"
 

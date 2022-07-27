@@ -1,0 +1,26 @@
+<h1>Quintilianus Vocabulary</h1>
+<h2><%= link_to "Click here to help add words", word_new_path, class: "nav-link"%></h2>
+
+<table>
+    <tr>
+        <th>Vocabulary Word</th>
+        <th>Meaning</th>
+        <th>Part of Speech</th>
+        <th>Textbook</th>
+        <th>Chapter</th>
+    </tr>
+
+    <% Word.all.each do |word| %>
+     </tr>
+        <tr>
+            <td><a href = "/word/<%=word.id%>">
+                <%= word.title%>    
+                </td>
+            <td><%= word.meaning %></td>
+            <td><%= word.pos %></td> 
+            <td><%= word.textbook %></td> 
+            <td><%= word.chapter %></td> 
+
+        </tr>
+    <%end%>
+</table>

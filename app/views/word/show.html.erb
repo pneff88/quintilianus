@@ -1,0 +1,16 @@
+<h1><%=@word.title %></h1>
+
+<p>Meaning: <%= @word.meaning %></p>
+<p>Part of Speech: <%= @word.pos %></p>
+<p>Textbook: <%= @word.textbook %></p>
+<p>Chapter: <%= @word.chapter %>
+
+<div>
+    <a href = "/word/<%=@word.id%>/edit">Edit word</a>
+</div>
+
+<form action = "/word/<%=@word.id%>" accept-charset="UTF-8" method = "delete">
+    <div>
+        <input type="submit" name = "commit" value = "Delete Word" data-disable-with="Create Word">
+    </div>
+</form>
