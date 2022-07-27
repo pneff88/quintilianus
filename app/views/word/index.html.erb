@@ -16,9 +16,9 @@
 
         <% Word.all.each do |word| %>
             <% if params[:word] %>
-                <% if params[:word][:pos] == 'all parts of speech' || (word.pos == params[:word][:pos] &&
-                word.textbook == params[:word][:textbook] &&
-                params[:word][:chapter] == 'all' || word.chapter == (params[:word][:chapter]).to_i ) %>
+                <% if (params[:word][:pos] == 'all parts of speech' || word.pos == params[:word][:pos]) && 
+                word.textbook == params[:word][:textbook] && 
+                (params[:word][:chapter] == 'all' || word.chapter == params[:word][:chapter].to_i)  %>
                     <tr>
                         <td><a href = "/word/<%=word.id%>"><%= word.title%></td>
                         <td><%= word.meaning %></td>
