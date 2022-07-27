@@ -41,6 +41,21 @@
     width: 60%;
 }
 
+.main-left2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    padding: 20px
+}
+
+.main-rigth2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 3-%;
+}
+
 .main-content .img-responsive {
     border-radius: 10px; 
     max-width: 300px

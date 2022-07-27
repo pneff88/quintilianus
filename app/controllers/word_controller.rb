@@ -1,5 +1,7 @@
 class WordController < ApplicationController
+    
     def index
+        print(params[:pos]) 
     end
 
     def show
