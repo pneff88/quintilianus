@@ -13,12 +13,7 @@ class WordController < ApplicationController
     end
 
     def create
-        @textbook = Textbook.last
-        Textbook.all.each do |t|
-            if t.name == params[:word][:textbook]
-                @textbook = Textbook.find(id=t.id)
-            end
-        end
+        @textbook = Textbook.find(params[:word][:textbook])
         @chapter = @textbook.chapters[0]
         @textbook.chapters.each do |c|
             if c.name == params[:chapter]
@@ -26,7 +21,6 @@ class WordController < ApplicationController
             end
         end
         @word = Word.new(title: params[:word][:title], meaning: params[:word][:meaning], pos: params[:word][:pos], chapter_id: @chapter.id)
-        @word.save
         if @word.save
             @chapter.words << @word
             redirect_to @word            

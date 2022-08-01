@@ -15,22 +15,23 @@
             <th>Textbook</th>
             <th>Chapter</th>
         </tr>
-
-        <% Word.all.each do |word| %>
-            <% if word.chapter_id %>
-                <%chap = Chapter.find(id = word.chapter_id)%>
-                <%tb = Textbook.find(id = chap.textbook_id)%>
-                <% if ((params[:word][:pos] == 'all' || word.pos == params[:word][:pos]) &&
-                (params[:word][:textbook] == 'all' || tb.name == params[:word][:textbook]) &&
-                params[:word][:chapter] == '' || chap.name.to_i == params[:word][:chapter].to_i )
-                %>
-                    <tr>
-                        <td><a href = "/word/<%=word.id%>"><%= word.title%></td>
-                        <td><%= word.meaning %></td>
-                        <td><%= word.pos %></td> 
-                        <td><%= tb.name %></td>
-                        <td><%= chap.name %></td>
-                    </tr>
+        <% if params[:word] %>
+            <% Word.all.each do |word| %>
+                <% if word.chapter_id %>
+                    <%chap = Chapter.find(id = word.chapter_id)%>
+                    <%tb = Textbook.find(id = chap.textbook_id)%>
+                    <% if ((params[:word][:pos] == 'all' || word.pos == params[:word][:pos]) &&
+                    (params[:word][:textbook] == 'all' || tb.name == params[:word][:textbook]) &&
+                    params[:word][:chapter] == '' || chap.name.to_i == params[:word][:chapter].to_i )
+                    %>
+                        <tr>
+                            <td><a href = "/word/<%=word.id%>"><%= word.title%></td>
+                            <td><%= word.meaning %></td>
+                            <td><%= word.pos %></td> 
+                            <td><%= tb.name %></td>
+                            <td><%= chap.name %></td>
+                        </tr>
+                    <%end%>
                 <%end%>
             <%end%>
         <%end%>
