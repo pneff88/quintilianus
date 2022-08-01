@@ -12,13 +12,12 @@ class ChapterController < ApplicationController
     end
 
     def create
-        @chapter = Chapter.new(name: params[:chapter][:name])
-
+        @textbook = Textbook.find(params[:chapter][:textbook_id])
+        @chapter = Chapter.new(name: params[:chapter][:name], textbook_id: @textbook.id)
         if @chapter.save
-            redirect_to "/textbook"            
-        else
-            render status: :unprocessable_entity  
+            @textbook.chapters << @chapter
         end
+        redirect_to "/textbook"    
     end
 
     def destroy
