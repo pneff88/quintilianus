@@ -17,19 +17,22 @@
         </tr>
 
         <% Word.all.each do |word| %>
+            <% if word.chapter_id %>
+                <%chap = Chapter.find(id = word.chapter_id)%>
+                <%tb = Textbook.find(id = chap.textbook_id)%>
+                <% if ((params[:word][:pos] == 'all' || word.pos == params[:word][:pos]) &&
+                (params[:word][:textbook] == 'all' || tb.name == params[:word][:textbook]) &&
+                params[:word][:chapter] == '' || chap.name.to_i == params[:word][:chapter].to_i )
+                %>
                     <tr>
                         <td><a href = "/word/<%=word.id%>"><%= word.title%></td>
                         <td><%= word.meaning %></td>
                         <td><%= word.pos %></td> 
-                        <%if word.chapter%>
-                            <%if word.chapter.textbook%>
-                                <td><%= word.chapter.textbook.name %></td> 
-                            <%end%>
-                        <%end%>
-                        <% if word.chapter %>
-                            <td><%= word.chapter.name %></td> 
-                        <%end%>
+                        <td><%= tb.name %></td>
+                        <td><%= chap.name %></td>
                     </tr>
+                <%end%>
+            <%end%>
         <%end%>
     </table>
                       
@@ -41,28 +44,31 @@
             <input type="hidden" name="authenticity_token" value="...">
 
             <div>
-                <label for = "pos">Part of speech</lable><br>
-                <select>
-                    <option value = 'all' type = "text" name = "word[pos]" id='word_pos'>All</option>
-                    <option value = 'noun' type = "text" name = "word[pos]" id='word_pos'>Noun</option>
-                    <option value = 'verb' type = "text" name = "word[pos]" id='word_pos'>Verb</option>
-                    <option value = 'preposition' type = "text" name = "word[pos]" id='word_pos'>Preposition</option>
-                    <option value = 'adjective' type = "text" name = "word[pos]" id='word_pos'>Adjective</option>
-                    <option value = 'adverb' type = "text" name = "word[pos]" id='word_pos'>Adverb</option>
-                    <option value = 'conjunction' type = "text" name = "word[pos]" id='word_pos'>Conjunction</option>
-                    <option value = 'interjection' type = "text" name = "word[pos]" id='word_pos'>Interjection</option>
+                <label for = "word_pos">Part of speech</lable><br>
+                <select type = 'text' name = 'word[pos]' id = 'word_pos'>
+                    <option value = 'all' >All</option>
+                    <option value = 'noun' >Noun</option>
+                    <option value = 'verb' >Verb</option>
+                    <option value = 'preposition' >Preposition</option>
+                    <option value = 'adjective' >Adjective</option>
+                    <option value = 'adverb' >Adverb</option>
+                    <option value = 'conjunction' >Conjunction</option>
+                    <option value = 'interjection' >Interjection</option>
                 </select>
             </div>
             <div>
-                <label for = "textbook_textbook_id">Textbook</lable><br>
-                <input type = "integer" name = "textbook[textbook_id]" id='textbook_id'>
+                <label for = "word_textbook">Textbook</lable><br>
+                <select type = 'text' name = 'word[textbook]' id = 'word_textbook'>
+                    <option value='all'>All Textbooks</option>
+                    <% Textbook.all.each do |t| %>
+                        <option value='<%=t.name %>'><%=t.name%></option>
+                    <%end%>
+                </select>
             </div>
             <div>
-                <label for = "chapter">Chapter</lable><br>
-                <input type = "integer" name = "chapter" id='chapter'>
+                <label for = "word_chapter">Chapter</lable><br>
+                <input type = "text" name = "word[chapter]" id='word_chapter'>
             </div>
-
-
 
             <div>
                 <input type="submit" name = "commit" value = "Update Word List" data-disable-with="Create Textbook">
