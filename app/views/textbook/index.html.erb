@@ -1,0 +1,7 @@
+<h1>Latin Textbooks:</h1>
+
+<% @textbooks.each do |text| %>
+    <div><a href = "/textbook/<%=text.id%>"><%=text.name%></div>
+<%end%>
+
+<h2><%= link_to "Click here to help add a new textbook.", "/textbook/new", class: "nav-link"%></h2>

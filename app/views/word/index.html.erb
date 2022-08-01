@@ -1,6 +1,8 @@
-<%= params %>
+<%if params %>
+    <%= params %>
+<%end%>
 
-<h1 style = "text-align: center">Quintilianus Vocabulary</h1>
+ <h1 style = "text-align: center">Quintilianus Vocabulary</h1>
 <% if params[:word] %>
     <h6>Now displaying <%=params[:word][:pos]%>(s) from chapter <%=params[:word][:chapter]%> of <%=params[:word][:textbook]%>:</h6>
 <%end%>
@@ -15,62 +17,57 @@
         </tr>
 
         <% Word.all.each do |word| %>
-            <% if params[:word] %>
-                <% if (params[:word][:pos] == 'all parts of speech' || word.pos == params[:word][:pos]) && 
-                word.textbook == params[:word][:textbook] && 
-                (params[:word][:chapter] == 'all' || word.chapter == params[:word][:chapter].to_i)  %>
                     <tr>
                         <td><a href = "/word/<%=word.id%>"><%= word.title%></td>
                         <td><%= word.meaning %></td>
                         <td><%= word.pos %></td> 
-                        <td><%= word.textbook %></td> 
-                        <td><%= word.chapter %></td> 
+                        <%if word.chapter%>
+                            <%if word.chapter.textbook%>
+                                <td><%= word.chapter.textbook.name %></td> 
+                            <%end%>
+                        <%end%>
+                        <% if word.chapter %>
+                            <td><%= word.chapter.name %></td> 
+                        <%end%>
                     </tr>
-                <%end%>
-            <%end%>
         <%end%>
     </table>
-
+                      
     <div class = "main-left2">
-        <h2><%= link_to "Click here to help add words", word_new_path, class: "nav-link"%></h2>
-        <h2>Change List</h2>
+        <h2><a href = '/word/new'>Add a new word.</a></h2>
+
+        <h2>Filter Word List:</h2>
         <form action = "/word" accept-charset="UTF-8" method = "get">
             <input type="hidden" name="authenticity_token" value="...">
 
             <div>
-                <label for = "word_pos">Part of Speech</lable><br>
-                <select type = "text" name = "word[pos]" id="word_pos">
-                    <option value = "all parts of speech">All parts of speech</option>
-                    <option value = "noun">Noun</option>
-                    <option value = "pronoun">Pronoun</option>
-                    <option value = "verb">Verb</option>
-                    <option value = "adjective">Adjective</option>
-                    <option value = "adverb">Adverb</option>
-                    <option value = "preposition">Preposition</option>
-                    <option value = "conjunction">Conjunction</option>
-                    <option value = "interjection">Interjection</option>
+                <label for = "pos">Part of speech</lable><br>
+                <select>
+                    <option value = 'all' type = "text" name = "word[pos]" id='word_pos'>All</option>
+                    <option value = 'noun' type = "text" name = "word[pos]" id='word_pos'>Noun</option>
+                    <option value = 'verb' type = "text" name = "word[pos]" id='word_pos'>Verb</option>
+                    <option value = 'preposition' type = "text" name = "word[pos]" id='word_pos'>Preposition</option>
+                    <option value = 'adjective' type = "text" name = "word[pos]" id='word_pos'>Adjective</option>
+                    <option value = 'adverb' type = "text" name = "word[pos]" id='word_pos'>Adverb</option>
+                    <option value = 'conjunction' type = "text" name = "word[pos]" id='word_pos'>Conjunction</option>
+                    <option value = 'interjection' type = "text" name = "word[pos]" id='word_pos'>Interjection</option>
                 </select>
             </div>
             <div>
-                <label for = "word_textbook">Textbook</lable><br>
-                <select type = "text" name = "word[textbook]" id="word_textbook">
-                    <option value = "Cambridge">Cambridge</option>
-                </select>
+                <label for = "textbook_textbook_id">Textbook</lable><br>
+                <input type = "integer" name = "textbook[textbook_id]" id='textbook_id'>
             </div>
             <div>
-                <label for = "word_chapter">Chapter</lable><br>
-                <select type = "text" name = "word[chapter]" id="word_chapter">
-                    <option value = 'all'>All</option>
-                    <option value = 1>1</option>
-                    <option value = 2>2</option>
-
-                </select>        
+                <label for = "chapter">Chapter</lable><br>
+                <input type = "integer" name = "chapter" id='chapter'>
             </div>
 
+
+
             <div>
-                <input type="submit" name = "commit" value = "Update List" >
+                <input type="submit" name = "commit" value = "Update Word List" data-disable-with="Create Textbook">
             </div>
         </form>
+    
     </div>
-
 </div>

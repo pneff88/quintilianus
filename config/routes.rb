@@ -44,4 +44,20 @@ Rails.application.routes.draw do
 
   root to: "main#index"
 
+  get "/textbook", to: "textbook#index"
+  get "/textbook/new", to: "textbook#new"
+  get "/textbook/:id", to: "textbook#show"
+  post "/textbook/create", to: "textbook#create"
+  delete "/textbook/:id", to: "textbook#destroy"
+  get "/textbook/:id/edit", to: "textbook#edit"
+  post "/textbook/:id/update", to: "textbook#update"
+
+  get "/chapter", to: "chapter#index"
+  get "/chapter/new", to: "chapter#new"
+  get "/chapter/:id", to: "chapter#show"
+  post "/chapter/create", to: "chapter#create"
+  delete "/chapter/:id", to: "chapter#destroy"
+  get "/chapter/:id/edit", to: "chapter#edit"
+  post "/chapter/:id/update", to: "chapter#update"
+  
 end

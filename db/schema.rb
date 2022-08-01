@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_22_140440) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_29_212323) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chapters", force: :cascade do |t|
+    t.integer "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "textbook_id", null: false
+    t.index ["textbook_id"], name: "index_chapters_on_textbook_id"
+  end
+
+  create_table "textbooks", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
@@ -28,10 +42,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_140440) do
     t.string "title"
     t.string "meaning"
     t.string "pos"
-    t.string "textbook"
-    t.integer "chapter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "chapter_id"
+    t.index ["chapter_id"], name: "index_words_on_chapter_id"
   end
 
+  add_foreign_key "chapters", "textbooks"
+  add_foreign_key "words", "chapters"
 end

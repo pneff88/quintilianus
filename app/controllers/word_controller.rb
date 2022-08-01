@@ -13,9 +13,22 @@ class WordController < ApplicationController
     end
 
     def create
-        @word = Word.new(word_params)
-
+        @textbook = Textbook.last
+        Textbook.all.each do |t|
+            if t.name == params[:word][:textbook]
+                @textbook = Textbook.find(id=t.id)
+            end
+        end
+        @chapter = @textbook.chapters[0]
+        @textbook.chapters.each do |c|
+            if c.name == params[:chapter]
+                @chapter = Chapter.find(c.id)
+            end
+        end
+        @word = Word.new(title: params[:word][:title], meaning: params[:word][:meaning], pos: params[:word][:pos], chapter_id: @chapter.id)
+        @word.save
         if @word.save
+            @chapter.words << @word
             redirect_to @word            
         else
             render :new, status: :unprocessable_entity  

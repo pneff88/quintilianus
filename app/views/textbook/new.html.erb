@@ -1,0 +1,17 @@
+<h1>Add New Textbook</h1>
+<%= params %>
+<form action = "/textbook/create" accept-charset="UTF-8" method = "post">
+    <input type="hidden" name="authenticity_token" value="...">
+
+    <div>
+        <label for = "textbook_name">Textbook Title</lable><br>
+        <input type = "text" name = "textbook[name]" id='textbook_name'>
+    </div>
+
+
+
+
+    <div>
+        <input type="submit" name = "commit" value = "Create Textbook" data-disable-with="Create Textbook">
+    </div>
+</form>
