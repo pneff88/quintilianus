@@ -36,7 +36,7 @@ class WordController < ApplicationController
     def update
         @word = Word.find(params[:id])
 
-        if @word.update(word_params)
+        if @word.update(title: params[:word][:title], meaning: params[:word][:meaning], pos: params[:word][:pos], chapter_id: params[:word][:chapter])
             redirect_to @word
         else
             render :edit, status: :unprocessable_entity

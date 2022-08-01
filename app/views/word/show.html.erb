@@ -1,9 +1,11 @@
 <h1><%=@word.title %></h1>
+<% chap = Chapter.find(@word.chapter_id) %>
+<% tb = Textbook.find(chap.textbook_id) %>
 
 <p>Meaning: <%= @word.meaning %></p>
 <p>Part of Speech: <%= @word.pos %></p>
-<p>Textbook: <%= @word.textbook %></p>
-<p>Chapter: <%= @word.chapter %>
+<p>Textbook: <%= tb.name %></p>
+<p>Chapter: <%= chap.name %>
 
 <div>
     <a href = "/word/<%=@word.id%>/edit">Edit word</a>

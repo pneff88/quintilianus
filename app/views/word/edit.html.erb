@@ -28,12 +28,18 @@
     </div>
     <div>
         <label for = "word_textbook">Textbook</lable><br>
-        <input type = "text" name = "word[textbook]" id='word_textbook' value = "<%=@word.textbook%>">
+        <select type = 'text' name = 'word[textbook]' id = 'word_textbook'>
+            <% Textbook.all.each do |t| %>
+                <option value='<%=t.id %>'><%=t.name%></option>
+            <%end%>
+        </select>
     </div>
     <div>
         <label for = "word_chapter">Chapter</lable><br>
-        <input type = "text" name = "word[chapter]" id='word_chapter' value = "<%=@word.chapter%>">
+        <input type = "text" name = "word[chapter]" id='word_chapter'>
     </div>
+
+
 
     <div>
         <input type="submit" name = "commit" value = "Edit Word" data-disable-with="Edit Word">
