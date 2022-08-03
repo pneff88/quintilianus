@@ -9,6 +9,10 @@ class WordController < ApplicationController
     end
 
     def new
+        if !Current.user || !Current.user.admin 
+            redirect_to '/word', notice: "Only admins can do that."
+        end
+
         @word = Word.new
     end
 

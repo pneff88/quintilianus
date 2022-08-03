@@ -5,6 +5,9 @@ class TextbookController < ApplicationController
     end
 
     def new
+        if !Current.user || !Current.user.admin 
+            redirect_to '/textbook', notice: "Only admins can do that."
+        end
         @textbook = Textbook.new
     end
 
