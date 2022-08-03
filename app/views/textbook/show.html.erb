@@ -3,25 +3,28 @@
 <% @textbook.chapters.each do |c| %>
     <div><%=c.name%></div>
 <%end%>
+<%if Current.user%>
+    <%if Current.user.admin %>
+        <h2>Add more chapters</h2>
+        <form action = "/chapter/create" accept-charset="UTF-8" method = "post">
+            <input type="hidden" name="authenticity_token" value="...">
+            <div>
+                <label for = "chapter_textbook_id"></lable><br>
+                <input type = "hidden" name = "chapter[textbook_id]" id='chapter_textbook_id' value='<%=@textbook.id%>'>
+            </div>
+            <div>
+                <label for = "chapter_name">Chapter Number:</lable><br>
+                <input type = "text" name = "chapter[name]" id='chapter_name'>
+            </div>
+            <div>
+                <input type="submit" name = "commit" value = "Create Chapter" data-disable-with="Create Chapter">
+            </div>
+        </form>
 
-<h2>Add more chapters</h2>
-<form action = "/chapter/create" accept-charset="UTF-8" method = "post">
-    <input type="hidden" name="authenticity_token" value="...">
-    <div>
-        <label for = "chapter_textbook_id"></lable><br>
-        <input type = "hidden" name = "chapter[textbook_id]" id='chapter_textbook_id' value='<%=@textbook.id%>'>
-    </div>
-    <div>
-        <label for = "chapter_name">Chapter Number:</lable><br>
-        <input type = "text" name = "chapter[name]" id='chapter_name'>
-    </div>
-    <div>
-        <input type="submit" name = "commit" value = "Create Chapter" data-disable-with="Create Chapter">
-    </div>
-</form>
-
-<form action = "/textbook/<%=@textbook.id%>" accept-charset="UTF-8" method = "delete">
-    <div>
-        <input type="submit" name = "commit" value = "Delete Textbook" data-disable-with="Create Word">
-    </div>
-</form>
+        <form action = "/textbook/<%=@textbook.id%>" accept-charset="UTF-8" method = "delete">
+            <div>
+                <input type="submit" name = "commit" value = "Delete Textbook" data-disable-with="Create Word">
+            </div>
+        </form>
+    <%end%>
+<%end%>
