@@ -1,7 +1,7 @@
 <h1>New Vocabulary Word</h1>
-
+<%=params%>
 <form action = "/word/create" accept-charset="UTF-8" method = "patch">
-    <input type="hidden" name="authenticity_token" value="...">
+    <input type="hidden" name="authenticity_token" value= '<%=form_authenticity_token%>'>
 
     <div>
         <label for = "word_title">Vocabulary Word</lable><br>
