@@ -6,6 +6,7 @@
         <th>Nomen</th>
         <th>Email</th>
         <th>Pecunia</th>
+        <th>Badges Earned</th>
     </tr>
     <% place = 1 %>
     
@@ -16,6 +17,7 @@
             <td><%= user.nomen%></td>
             <td><%= user.email %></td>
             <td><%= user.pecunia %></td> 
+            <td><img src = <%= image_path ('CambridgeStage1VocabBadge.png') %> width = 100px height = 100px></td>
             <%place=place + 1%>
         </tr>
     <%end%>
