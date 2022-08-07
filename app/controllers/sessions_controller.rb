@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
         user = User.find_by(email: params[:email])
         if user.present? && user.authenticate(params[:password])
             session[:user_id]=user.id
-            session[:expires_at] = Time.current + 1.minute
+            session[:expires_at] = Time.current + 30.minutes
             redirect_to root_path, notice: "Successfully logged in."
         else
             redirect_to sign_in_path, alert: "Invalid email or password."
