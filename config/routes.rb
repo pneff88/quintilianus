@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   delete "word/:id", to: "word#destroy"
   get "word/:id/edit", to: "word#edit"
   post "/word/:id/update", to: "word#update"
+  get "words", to: "word#all"
 
   post "pecunia", to: "pecunia#edit"
 

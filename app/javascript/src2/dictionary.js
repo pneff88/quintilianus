@@ -168,6 +168,12 @@ const dictionary = [
   ["FUMUS", "smoke"]
 ];
 
+
+
+  // fetch("/words").then(res => res.json()).then(resjson => console.log(resjson)) //returns words
+
+  // fetch("/words").then(res => res.json()).then(resjson => console.log(resjson.map(word => word.title))) //returns titles
+
 const dictionaryMap = dictionary.reduce((dictMap, [word, defs])=>{
   dictMap[word] = defs
   return dictMap;

@@ -20,25 +20,25 @@
     },
     "verble": {
       "js": [
-        "/packs/js/verble-4dcd9cc81cd673e6dfb0.js"
+        "/packs/js/verble-27225bde53233a9d6227.js"
       ],
       "js.map": [
-        "/packs/js/verble-4dcd9cc81cd673e6dfb0.js.map"
+        "/packs/js/verble-27225bde53233a9d6227.js.map"
       ]
     },
     "vocabbuilder": {
       "js": [
-        "/packs/js/vocabbuilder-9d3af175c1525aad6cc2.js"
+        "/packs/js/vocabbuilder-5ab99799a60153fd6aa3.js"
       ],
       "js.map": [
-        "/packs/js/vocabbuilder-9d3af175c1525aad6cc2.js.map"
+        "/packs/js/vocabbuilder-5ab99799a60153fd6aa3.js.map"
       ]
     }
   },
   "server_rendering.js": "/packs/js/server_rendering-877d2587d52c7c2ae24d.js",
   "server_rendering.js.map": "/packs/js/server_rendering-877d2587d52c7c2ae24d.js.map",
-  "verble.js": "/packs/js/verble-4dcd9cc81cd673e6dfb0.js",
-  "verble.js.map": "/packs/js/verble-4dcd9cc81cd673e6dfb0.js.map",
-  "vocabbuilder.js": "/packs/js/vocabbuilder-9d3af175c1525aad6cc2.js",
-  "vocabbuilder.js.map": "/packs/js/vocabbuilder-9d3af175c1525aad6cc2.js.map"
+  "verble.js": "/packs/js/verble-27225bde53233a9d6227.js",
+  "verble.js.map": "/packs/js/verble-27225bde53233a9d6227.js.map",
+  "vocabbuilder.js": "/packs/js/vocabbuilder-5ab99799a60153fd6aa3.js",
+  "vocabbuilder.js.map": "/packs/js/vocabbuilder-5ab99799a60153fd6aa3.js.map"
 }

@@ -8,6 +8,11 @@ class WordController < ApplicationController
         @word = Word.find(params[:id])
     end
 
+    def all
+        @words = Word.all
+        render :json => @words
+    end
+
     def new
         if !Current.user || !Current.user.admin 
             redirect_to '/word', notice: "Only admins can do that."
