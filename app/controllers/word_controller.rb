@@ -22,13 +22,14 @@ class WordController < ApplicationController
     end
 
     def create
-        @textbook = Textbook.find(params[:word][:textbook])
-        @chapter = @textbook.chapters[0]
+        @textbook = Textbook.find(params[:word][:textbook])     
+        chap_id = -1
         @textbook.chapters.each do |c|
-            if c.name == params[:chapter]
-                @chapter = Chapter.find(c.id)
+            if (c.name) == (params[:word][:chapter].to_i)
+                chap_id = c.id
             end
         end
+        @chapter = Chapter.find(chap_id)
         @word = Word.new(title: params[:word][:title], meaning: params[:word][:meaning], pos: params[:word][:pos], chapter_id: @chapter.id)
         if @word.save
             @chapter.words << @word
