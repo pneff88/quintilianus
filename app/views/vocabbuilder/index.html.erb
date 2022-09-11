@@ -1,7 +1,5 @@
-<h1 class='game-heading'>Quintilianus Vocabulary Builder</h1>
-<%if params%>
-    <%= params %>
-<%end%>
+<h1 class='game-heading'>Quintilianus Vocabulary Study Tool</h1>
+
 <% if params[:word] %>
     <% the_words = {}%>
     <% Word.all.each do |word| %>
