@@ -169,10 +169,10 @@ const dictionary = [
 ];
 
 
-
-  // fetch("/words").then(res => res.json()).then(resjson => console.log(resjson)) //returns words
-
-  // fetch("/words").then(res => res.json()).then(resjson => console.log(resjson.map(word => word.title))) //returns titles
+// fetch("/words").then(res => res.json()).then(resjson => console.log(resjson)) //returns words
+// fetch("/words").then(res => res.json()).then(resjson => console.log(resjson.map(word => [word.title, word.meaning, word.pos, word.chapter_id])))
+let dict2 = fetch("/words").then(res => res.json()).then(resjson => (resjson.map(word => [word.title, word.meaning, word.pos, word.chapter_id]))) 
+console.log(dict2)
 
 const dictionaryMap = dictionary.reduce((dictMap, [word, defs])=>{
   dictMap[word] = defs
