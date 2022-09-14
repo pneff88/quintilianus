@@ -1,4 +1,4 @@
-const dictionary = [
+const dictionary1 = [
   ["PATER", "father"],
   ["BARBA", "beard"],
   ["MATER", "mother"],
@@ -172,20 +172,50 @@ const dictionary = [
 // fetch("/words").then(res => res.json()).then(resjson => console.log(resjson)) //returns words
 // fetch("/words").then(res => res.json()).then(resjson => console.log(resjson.map(word => [word.title, word.meaning, word.pos, word.chapter_id])))
 
-let dict2 = fetch("/words").then(res => res.json()).then(resjson => (resjson.map(word => [word.title, word.meaning, word.pos, word.chapter_id]))) 
-console.log(dict2)
+// let dict2 = fetch("/words").then(res => res.json()).then(resjson => (resjson.map(word => [word.title, word.meaning, word.pos, word.chapter_id]))) 
+// console.log(dict2)
 console.log("Cheese Vaira")
-let cooks = document.cookie
+let cooksobj = {}
+let cooks = document.cookie.split('; ').map(x => x.split('='))
+for (let i = 0; i<cooks.length; i++){
+  cooksobj[cooks[i][0]] = cooks[i][1]
+}
 console.log(cooks)
+console.log(cooksobj)
+let chapid = cooksobj['chapterid']
+chapid = parseInt(chapid)
+console.log(chapid)
+
+let dictionary2 = []
+async function load_dictionary2() {
+  let dict2 = await fetch("/words").then(res => res.json()).then(resjson => (resjson.map(word => [word.title, word.meaning, word.pos, word.chapter_id]))) 
+  for (let i = 0; i<dict2.length; i++) {
+    if (dict2[i][3] && dict2[i][3]==chapid) {
+      dictionary2.push( [ dict2[i][0], dict2[i][1] ] )
+    }
+  }
+}
+load_dictionary2()
+// for (let i = 0; i<dict2.length; i++) {
+//   let entry = dict2[i];
+//   console.log(entry)
+// }
 // OLD DEFAULT:
 // const dictionaryMap = dictionary.reduce((dictMap, [word, defs])=>{
 //   dictMap[word] = defs
 //   return dictMap;
 // }, {})
 
-const dictionaryMap = dictionary.reduce((dictMap, [word, defs, pos, chap_id]) => {
+active_dictionary = []
+if (dictionary2.lenth > 2) {
+  active_dictionary = dictionary2;
+} else {
+  active_dictionary = dictionary1;
+}
+console.log(active_dictionary)
+
+const dictionaryMap = active_dictionary.reduce((dictMap, [word, defs]) => {
   dictMap[word] = defs
   return dictMap;
 }, {})
-
 export default dictionaryMap;

@@ -1,27 +1,8 @@
 <h1 class='game-heading'>Quintilianus Vocabulary Study Tool</h1>
-<% session[:test] = 'testdata' %>
-<% cookies[:wordstuff] = params[:word][:chapterID] %>
-<% if session[:words_parameters] %>
-    <%= session[:words_parameters] %>
-    <%  text = ''
-        chapid = ''
-        if session[:word_params]
-            Textbook.all do |t|
-                if t.name == session[:word_params][:textbook]
-                    text = t.name
-                end
-            end
-            t.chapters.all do |c|
-                if c.name == session[:word_params][:chapter].to_i
-                    chapid = c.id
-                end
-            end
-        end
-        session[:chapID] = chapid
-        puts "vaira2"
-        puts text
-        puts session[:chapID]%>
+<% if params[:word] %>
+    <% cookies[:wordstuff] = params[:word][:chapterID] %>
 <% end %>
+
 <% if params[:word] %>
     <% Textbook.all.each do |text| %>
         <% if text.name == params[:word][:textbook] %>
