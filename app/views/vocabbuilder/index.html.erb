@@ -1,4 +1,6 @@
 <h1 class='game-heading'>Quintilianus Vocabulary Study Tool</h1>
+<% session[:test] = 'testdata' %>
+<% cookies[:wordstuff] = params[:word][:chapterID] %>
 <% if session[:words_parameters] %>
     <%= session[:words_parameters] %>
     <%  text = ''
@@ -21,21 +23,15 @@
         puts session[:chapID]%>
 <% end %>
 <% if params[:word] %>
-    <% the_words = {}%>
-    <% Word.all.each do |word| %>
-        
-        <% if word.chapter_id %>
-            <%chap = Chapter.find(word.chapter_id)%>
-            <%tb = chap.textbook%>
-            <% if ((params[:word][:pos] == 'all' || word.pos == params[:word][:pos]) &&
-            (params[:word][:textbook] == 'all' || tb.name == params[:word][:textbook]) &&
-            (params[:word][:chapter] == '' || chap.name.to_i == params[:word][:chapter].to_i ))
-            %>
-                <% the_words[word.title] = word.meaning %> 
+    <% Textbook.all.each do |text| %>
+        <% if text.name == params[:word][:textbook] %>
+            <% text.chapters.each do |chap| %>
+                <% if chap.name == params[:word][:chapter].to_i %>
+                    <% cookies[:chapterid] = chap.id %>
+                <%end%>
             <%end%>
         <%end%>
     <%end%>
-    <% session[:words_parameters] = params[:word] %>
 <%end%>
 
 <div>
@@ -44,7 +40,9 @@
         <form action = "/vocabbuilder" accept-charset="UTF-8" method = "get">
             <input type="hidden" name="authenticity_token" value="...">
 
-            <div>
+            <%
+=begin%>
+ <div>
                 <label for = "word_pos">Part of speech</lable><br>
                 <select type = 'text' name = 'word[pos]' id = 'word_pos'>
                     <option value = 'all' >All</option>
@@ -56,7 +54,9 @@
                     <option value = 'conjunction' >Conjunction</option>
                     <option value = 'interjection' >Interjection</option>
                 </select>
-            </div>
+            </div> 
+<%
+=end%>
             <div>
                 <label for = "word_textbook">Textbook</lable><br>
                 <select type = 'text' name = 'word[textbook]' id = 'word_textbook'>

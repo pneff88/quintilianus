@@ -28,10 +28,10 @@
     },
     "vocabbuilder": {
       "js": [
-        "/packs/js/vocabbuilder-4447fd60b06531398051.js"
+        "/packs/js/vocabbuilder-f21e32535c526abb2c9d.js"
       ],
       "js.map": [
-        "/packs/js/vocabbuilder-4447fd60b06531398051.js.map"
+        "/packs/js/vocabbuilder-f21e32535c526abb2c9d.js.map"
       ]
     }
   },
@@ -39,6 +39,6 @@
   "server_rendering.js.map": "/packs/js/server_rendering-877d2587d52c7c2ae24d.js.map",
   "verble.js": "/packs/js/verble-27225bde53233a9d6227.js",
   "verble.js.map": "/packs/js/verble-27225bde53233a9d6227.js.map",
-  "vocabbuilder.js": "/packs/js/vocabbuilder-4447fd60b06531398051.js",
-  "vocabbuilder.js.map": "/packs/js/vocabbuilder-4447fd60b06531398051.js.map"
+  "vocabbuilder.js": "/packs/js/vocabbuilder-f21e32535c526abb2c9d.js",
+  "vocabbuilder.js.map": "/packs/js/vocabbuilder-f21e32535c526abb2c9d.js.map"
 }
