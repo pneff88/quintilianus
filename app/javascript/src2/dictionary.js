@@ -180,11 +180,9 @@ let cooks = document.cookie.split('; ').map(x => x.split('='))
 for (let i = 0; i<cooks.length; i++){
   cooksobj[cooks[i][0]] = cooks[i][1]
 }
-console.log(cooks)
-console.log(cooksobj)
+
 let chapid = cooksobj['chapterid']
 chapid = parseInt(chapid)
-console.log(chapid)
 
 let dictionary2 = []
 async function load_dictionary2() {
@@ -206,15 +204,16 @@ load_dictionary2()
 //   return dictMap;
 // }, {})
 
-active_dictionary = []
-if (dictionary2.lenth > 2) {
-  active_dictionary = dictionary2;
+let active_dictionary = []
+if (dictionary2.lenth > 0) {
+  active_dictionary = dictionary2
 } else {
-  active_dictionary = dictionary1;
+  active_dictionary = dictionary1
 }
+console.log(dictionary2)
 console.log(active_dictionary)
 
-const dictionaryMap = active_dictionary.reduce((dictMap, [word, defs]) => {
+const dictionaryMap = dictionary2.reduce((dictMap, [word, defs]) => {
   dictMap[word] = defs
   return dictMap;
 }, {})
