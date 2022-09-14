@@ -173,11 +173,18 @@ const dictionary = [
 // fetch("/words").then(res => res.json()).then(resjson => console.log(resjson.map(word => [word.title, word.meaning, word.pos, word.chapter_id])))
 let dict2 = fetch("/words").then(res => res.json()).then(resjson => (resjson.map(word => [word.title, word.meaning, word.pos, word.chapter_id]))) 
 console.log(dict2)
+console.log("Cheese Vaira")
 
-const dictionaryMap = dictionary.reduce((dictMap, [word, defs])=>{
+// OLD DEFAULT:
+// const dictionaryMap = dictionary.reduce((dictMap, [word, defs])=>{
+//   dictMap[word] = defs
+//   return dictMap;
+// }, {})
+
+const dictionaryMap = dict2.reduce((dictMap, [word, defs, pos, chap_id]) => {
   dictMap[word] = defs
   return dictMap;
 }, {})
-
+console.log(dictionaryMap)
 
 export default dictionaryMap;
